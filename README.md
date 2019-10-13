@@ -3,7 +3,7 @@ This project asks the user for a dish. The program proceeds to grab the most rel
 It reads and converts all the ingredients to a DataTable which is later iterated over to search and add those
 ingredients to the cart on instacart.com.
 
-#Pre-requisites
+# Pre-requisites
 * The system must be a Windows PC
 * The user must have the UIPath Robot set up
 *  An Instacart account
