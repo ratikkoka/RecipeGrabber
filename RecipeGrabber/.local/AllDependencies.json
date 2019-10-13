@@ -1302,9 +1302,9 @@
     "restore": {
       "projectUniqueName": "DubHacks",
       "projectName": "DubHacks",
-      "projectPath": "C:\\Users\\kille\\OneDrive - UW\\DubHacks\\RecipeGrabber\\DubHacks\\.local",
+      "projectPath": "C:\\Users\\kille\\OneDrive - UW\\DubHacks\\RecipeGrabber\\RecipeGrabber\\.local",
       "packagesPath": "C:\\Users\\kille\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kille\\OneDrive - UW\\DubHacks\\RecipeGrabber\\DubHacks\\.local"
+      "outputPath": "C:\\Users\\kille\\OneDrive - UW\\DubHacks\\RecipeGrabber\\RecipeGrabber\\.local"
     },
     "frameworks": {
       "net461": {

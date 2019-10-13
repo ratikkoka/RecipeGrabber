@@ -1,7 +1,7 @@
 {
   "name": "DubHacks",
   "description": "Blank Process",
-  "main": "Main.xaml",
+  "main": "Recipe.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.6.3]",
     "UiPath.Mail.Activities": "[1.6.0]",
@@ -29,7 +29,8 @@
     "libraryOptions": {
       "includeOriginalXaml": false,
       "privateWorkflows": []
-    }
+    },
+    "fileInfos": []
   },
   "expressionLanguage": "VisualBasic"
 }
