@@ -74,7 +74,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,107</av:Point>
           <av:Size x:Key="ShapeSize">200,66</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,173 300,197</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">300,173 300,223</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence DisplayName="Ask for Recipe" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
@@ -90,389 +90,389 @@
         </ui:InputDialog>
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID0">
+        <FlowStep x:Name="__ReferenceID5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">200,197</av:Point>
+              <av:Point x:Key="ShapeLocation">200,223</av:Point>
               <av:Size x:Key="ShapeSize">200,66</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">300,263 300,297</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">300,289 300,339</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Open AllRecipes" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <Sequence DisplayName="Get Login info" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_54">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="476,709" sap2010:WorkflowViewState.IdRef="Sequence_20">
+            <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="Enter Username" Title="User Info">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:String">[username]</OutArgument>
+              </ui:InputDialog.Result>
+            </ui:InputDialog>
+            <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="True" Label="Enter Password" Title="User Info">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:String">[password]</OutArgument>
+              </ui:InputDialog.Result>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:OpenBrowser Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open https://www.allrecipes.com/" sap:VirtualizedContainerService.HintSize="434,617" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" UiBrowser="[browser]" Url="https://www.allrecipes.com/">
-                <ui:OpenBrowser.Body>
-                  <ActivityAction x:TypeArguments="x:Object">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                    </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,518" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  searchText'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" SendWindowMessages="False" SimulateType="True" Text="[recipe]">
-                        <ui:TypeInto.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1943d9f694fdfd2540ca8b7180ad653c" Selector="&lt;webctrl name='searchText' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                          </ui:Target>
-                        </ui:TypeInto.Target>
-                      </ui:TypeInto>
-                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition OffsetX="9" OffsetY="32" Position="TopLeft" />
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b800d4a8ffddb37f8f27f65969fb4294" Selector="&lt;webctrl aaname='                                      ' tag='BUTTON' /&gt;" WaitForReady="COMPLETE">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition OffsetX="222" OffsetY="16" Position="TopLeft" />
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="361154f47d55bd7c819dae2f02e6b17d" Selector="&lt;webctrl aaname='                       ' omit:href='https://www.allrecipes.com/recipe/162760/fluffy-pancakes/?intern*' parentid='fixedGridSection' tag='A' /&gt;" WaitForReady="COMPLETE">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                    </Sequence>
-                  </ActivityAction>
-                </ui:OpenBrowser.Body>
-              </ui:OpenBrowser>
-            </Sequence>
+            </ui:InputDialog>
           </Sequence>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID1">
+            <FlowStep x:Name="__ReferenceID0">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">200,297</av:Point>
+                  <av:Point x:Key="ShapeLocation">200,339</av:Point>
                   <av:Size x:Key="ShapeSize">200,66</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,363 300,407</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">300,405 300,467</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Grab Recipe" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_35">
+              <Sequence DisplayName="Open AllRecipes" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_21">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="434,579" sap2010:WorkflowViewState.IdRef="BrowserScope_5">
-                  <ui:BrowserScope.Body>
-                    <ActivityAction x:TypeArguments="x:Object">
-                      <ActivityAction.Argument>
-                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                      </ActivityAction.Argument>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,471" sap2010:WorkflowViewState.IdRef="Sequence_41">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_20" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                          <ui:Click.CursorPosition>
-                            <ui:CursorPosition OffsetX="26" OffsetY="25" Position="TopLeft" />
-                          </ui:Click.CursorPosition>
-                          <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="99a860f890627b9c626987549f02dba3" Selector="&lt;webctrl aaname='Print ' parentid='recipe-notes' tag='A' /&gt;" WaitForReady="COMPLETE">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                            </ui:Target>
-                          </ui:Click.Target>
-                        </ui:Click>
-                        <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'DIV'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_1">
-                          <ui:GetVisibleText.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0de36f70a15e25bdf7a789f7d55243e1" Selector="&lt;html app='chrome.exe' omit:title='Fluffy Pancakes - Printer Friendly - Allrecipes.com' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid='main-content' tag='DIV' /&gt;" WaitForReady="COMPLETE">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                            </ui:Target>
-                          </ui:GetVisibleText.Target>
-                          <ui:GetVisibleText.Text>
-                            <OutArgument x:TypeArguments="x:String">[ingredients]</OutArgument>
-                          </ui:GetVisibleText.Text>
-                        </ui:GetVisibleText>
-                        <ui:WriteTextFile DisplayName="Write Text File" FileName="ingredientsList" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[ingredients]" />
-                      </Sequence>
-                    </ActivityAction>
-                  </ui:BrowserScope.Body>
-                </ui:BrowserScope>
-              </Sequence>
-              <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID2">
+                <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="476,709" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">200,407</av:Point>
-                      <av:Size x:Key="ShapeSize">200,66</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">300,473 300,517</av:PointCollection>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Get Ingredients Only" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_45">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="ingredientsList" />
-                    </Sequence.Variables>
+                  <ui:OpenBrowser Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open https://www.allrecipes.com/" sap:VirtualizedContainerService.HintSize="434,617" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" UiBrowser="[browser]" Url="https://www.allrecipes.com/">
+                    <ui:OpenBrowser.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,518" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  searchText'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" SendWindowMessages="False" SimulateType="True" Text="[recipe]">
+                            <ui:TypeInto.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1943d9f694fdfd2540ca8b7180ad653c" Selector="&lt;webctrl name='searchText' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                              </ui:Target>
+                            </ui:TypeInto.Target>
+                          </ui:TypeInto>
+                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition OffsetX="9" OffsetY="32" Position="TopLeft" />
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b800d4a8ffddb37f8f27f65969fb4294" Selector="&lt;webctrl aaname='                                      ' tag='BUTTON' /&gt;" WaitForReady="COMPLETE">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                              </ui:Target>
+                            </ui:Click.Target>
+                          </ui:Click>
+                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition OffsetX="222" OffsetY="16" Position="TopLeft" />
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="361154f47d55bd7c819dae2f02e6b17d" Selector="&lt;webctrl aaname='                       ' omit:href='https://www.allrecipes.com/recipe/162760/fluffy-pancakes/?intern*' parentid='fixedGridSection' tag='A' /&gt;" WaitForReady="COMPLETE">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                              </ui:Target>
+                            </ui:Click.Target>
+                          </ui:Click>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:OpenBrowser.Body>
+                  </ui:OpenBrowser>
+                </Sequence>
+              </Sequence>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">200,467</av:Point>
+                      <av:Size x:Key="ShapeSize">200,66</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">300,533 300,587</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Grab Recipe" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_35">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ReadTextFile Content="[ingredientsList]" DisplayName="Read Text File" FileName="ingredientsList" sap:VirtualizedContainerService.HintSize="562,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
-                    <ui:WriteTextFile DisplayName="Write Text File" FileName="strippedList" sap:VirtualizedContainerService.HintSize="562,87" sap2010:WorkflowViewState.IdRef="WriteTextFile_3">
-                      <ui:WriteTextFile.Text>
-                        <InArgument x:TypeArguments="x:String">
-                          <Literal x:TypeArguments="x:String" Value="" />
-                        </InArgument>
-                      </ui:WriteTextFile.Text>
-                    </ui:WriteTextFile>
-                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562,561" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Split(ingredientsList, Environment.NewLine)]">
-                      <ui:ForEach.Body>
-                        <ActivityAction x:TypeArguments="x:String">
+                    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="434,579" sap2010:WorkflowViewState.IdRef="BrowserScope_5">
+                      <ui:BrowserScope.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,427" sap2010:WorkflowViewState.IdRef="Sequence_46">
-                            <Sequence.Variables>
-                              <Variable x:TypeArguments="x:String" Name="temp" />
-                            </Sequence.Variables>
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,471" sap2010:WorkflowViewState.IdRef="Sequence_41">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_9">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:String">[temp]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:String">[item.Substring(0,1)]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <If Condition="[IsNumeric(temp)]" sap:VirtualizedContainerService.HintSize="484,235" sap2010:WorkflowViewState.IdRef="If_6">
-                              <If.Then>
-                                <ui:AppendLine DisplayName="Append Line" FileName="strippedList" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[item.ToString()]" />
-                              </If.Then>
-                            </If>
+                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_20" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition OffsetX="26" OffsetY="25" Position="TopLeft" />
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="99a860f890627b9c626987549f02dba3" Selector="&lt;webctrl aaname='Print ' parentid='recipe-notes' tag='A' /&gt;" WaitForReady="COMPLETE">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                </ui:Target>
+                              </ui:Click.Target>
+                            </ui:Click>
+                            <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'DIV'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_1">
+                              <ui:GetVisibleText.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0de36f70a15e25bdf7a789f7d55243e1" Selector="&lt;html app='chrome.exe' omit:title='Fluffy Pancakes - Printer Friendly - Allrecipes.com' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid='main-content' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                </ui:Target>
+                              </ui:GetVisibleText.Target>
+                              <ui:GetVisibleText.Text>
+                                <OutArgument x:TypeArguments="x:String">[ingredients]</OutArgument>
+                              </ui:GetVisibleText.Text>
+                            </ui:GetVisibleText>
+                            <ui:WriteTextFile DisplayName="Write Text File" FileName="ingredientsList" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[ingredients]" />
                           </Sequence>
                         </ActivityAction>
-                      </ui:ForEach.Body>
-                    </ui:ForEach>
+                      </ui:BrowserScope.Body>
+                    </ui:BrowserScope>
                   </Sequence>
                   <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID3">
+                    <FlowStep x:Name="__ReferenceID2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">200,517</av:Point>
+                          <av:Point x:Key="ShapeLocation">200,587</av:Point>
                           <av:Size x:Key="ShapeSize">200,66</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">300,583 300,633</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">300,653 300,697</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Separate Ingredients" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                      <Sequence DisplayName="Get Ingredients Only" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_45">
                         <Sequence.Variables>
-                          <Variable x:TypeArguments="x:String" Name="ingredientsOnly" />
-                          <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="temp" />
-                          <Variable x:TypeArguments="x:String" Name="ingredient" />
+                          <Variable x:TypeArguments="x:String" Name="ingredientsList" />
                         </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ReadTextFile Content="[ingredientsOnly]" DisplayName="Read Text File" FileName="strippedList" sap:VirtualizedContainerService.HintSize="490,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_3" />
-                        <ui:WriteTextFile DisplayName="Write Text File" FileName="onlyIngredients" sap:VirtualizedContainerService.HintSize="490,87" sap2010:WorkflowViewState.IdRef="WriteTextFile_4">
+                        <ui:ReadTextFile Content="[ingredientsList]" DisplayName="Read Text File" FileName="ingredientsList" sap:VirtualizedContainerService.HintSize="562,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+                        <ui:WriteTextFile DisplayName="Write Text File" FileName="strippedList" sap:VirtualizedContainerService.HintSize="562,87" sap2010:WorkflowViewState.IdRef="WriteTextFile_3">
                           <ui:WriteTextFile.Text>
                             <InArgument x:TypeArguments="x:String">
                               <Literal x:TypeArguments="x:String" Value="" />
                             </InArgument>
                           </ui:WriteTextFile.Text>
                         </ui:WriteTextFile>
-                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="490,638" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Split(ingredientsOnly, Environment.NewLine)]">
+                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562,561" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Split(ingredientsList, Environment.NewLine)]">
                           <ui:ForEach.Body>
                             <ActivityAction x:TypeArguments="x:String">
                               <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="x:String" Name="i" />
+                                <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                               </ActivityAction.Argument>
-                              <Sequence sap:VirtualizedContainerService.HintSize="454,504" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,427" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="temp" />
+                                </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:Matches BuilderPattern="[^\d+/+\d]*[^\d]*" sap:VirtualizedContainerService.HintSize="412,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[i]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;NONEOF&quot;,&quot;OperationName&quot;:&quot;Not one of&quot;,&quot;OperationValue&quot;:&quot;\\d+\/+\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;*&quot;,&quot;QuantifierID&quot;:&quot;ANY&quot;,&quot;QuantifierName&quot;:&quot;Any (0 or more)&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;NONEOF&quot;,&quot;OperationName&quot;:&quot;Not one of&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;*&quot;,&quot;QuantifierID&quot;:&quot;ANY&quot;,&quot;QuantifierName&quot;:&quot;Any (0 or more)&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="[^\d+/+\d]*[^\d]*" RegexOption="IgnoreCase" Result="[temp]" />
-                                <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,313" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[temp]">
-                                  <ui:ForEach.Body>
-                                    <ActivityAction x:TypeArguments="str:Match">
-                                      <ActivityAction.Argument>
-                                        <DelegateInArgument x:TypeArguments="str:Match" Name="item" />
-                                      </ActivityAction.Argument>
-                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_50">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <ui:AppendLine DisplayName="Append Line" FileName="onlyIngredients" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[item.ToString()]" />
-                                      </Sequence>
-                                    </ActivityAction>
-                                  </ui:ForEach.Body>
-                                </ui:ForEach>
+                                <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[temp]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[item.Substring(0,1)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <If Condition="[IsNumeric(temp)]" sap:VirtualizedContainerService.HintSize="484,235" sap2010:WorkflowViewState.IdRef="If_6">
+                                  <If.Then>
+                                    <ui:AppendLine DisplayName="Append Line" FileName="strippedList" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[item.ToString()]" />
+                                  </If.Then>
+                                </If>
                               </Sequence>
                             </ActivityAction>
                           </ui:ForEach.Body>
                         </ui:ForEach>
                       </Sequence>
                       <FlowStep.Next>
-                        <FlowStep x:Name="__ReferenceID8">
+                        <FlowStep x:Name="__ReferenceID3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">200,633</av:Point>
+                              <av:Point x:Key="ShapeLocation">200,697</av:Point>
                               <av:Size x:Key="ShapeSize">200,66</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">300,699 300,757</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">300,763 300,807</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Ingredients to CSV" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                          <Sequence DisplayName="Separate Ingredients" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_48">
                             <Sequence.Variables>
-                              <Variable x:TypeArguments="x:String" Name="ingredientsList" />
-                              <Variable x:TypeArguments="x:String" Name="temp" />
+                              <Variable x:TypeArguments="x:String" Name="ingredientsOnly" />
+                              <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="temp" />
+                              <Variable x:TypeArguments="x:String" Name="ingredient" />
                             </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ReadTextFile Content="[ingredientsList]" DisplayName="Read Text File" FileName="onlyIngredients" sap:VirtualizedContainerService.HintSize="1365,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_4" />
-                            <ui:WriteTextFile DisplayName="Write Text File" FileName="tempFile" sap:VirtualizedContainerService.HintSize="1365,87" sap2010:WorkflowViewState.IdRef="WriteTextFile_5">
+                            <ui:ReadTextFile Content="[ingredientsOnly]" DisplayName="Read Text File" FileName="strippedList" sap:VirtualizedContainerService.HintSize="490,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_3" />
+                            <ui:WriteTextFile DisplayName="Write Text File" FileName="onlyIngredients" sap:VirtualizedContainerService.HintSize="490,87" sap2010:WorkflowViewState.IdRef="WriteTextFile_4">
                               <ui:WriteTextFile.Text>
                                 <InArgument x:TypeArguments="x:String">
                                   <Literal x:TypeArguments="x:String" Value="" />
                                 </InArgument>
                               </ui:WriteTextFile.Text>
                             </ui:WriteTextFile>
-                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1365,1041" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[Split(ingredientsList, Environment.NewLine)]">
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="490,638" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Split(ingredientsOnly, Environment.NewLine)]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="x:String">
                                   <ActivityAction.Argument>
-                                    <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                    <DelegateInArgument x:TypeArguments="x:String" Name="i" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1329,907" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="454,504" sap2010:WorkflowViewState.IdRef="Sequence_51">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <If Condition="[item.Contains(&quot;/&quot;) Or item.Length = 0  Or item.Contains(&quot;.&quot;)]" sap:VirtualizedContainerService.HintSize="1287,815" sap2010:WorkflowViewState.IdRef="If_16">
-                                      <If.Then>
-                                        <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
-                                      </If.Then>
-                                      <If.Else>
-                                        <If Condition="[item.Length &gt;= 2]" sap:VirtualizedContainerService.HintSize="1042,667" sap2010:WorkflowViewState.IdRef="If_15">
-                                          <If.Then>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="663,519" sap2010:WorkflowViewState.IdRef="Sequence_70">
-                                              <Sequence.Variables>
-                                                <Variable x:TypeArguments="ui:GenericValue" Name="temp1" />
-                                              </Sequence.Variables>
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <If Condition="[item.Contains(&quot;(&quot;)]" sap:VirtualizedContainerService.HintSize="621,427" sap2010:WorkflowViewState.IdRef="If_18">
-                                                <If.Then>
-                                                  <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_2" />
-                                                </If.Then>
-                                                <If.Else>
-                                                  <Sequence sap:VirtualizedContainerService.HintSize="376,279" sap2010:WorkflowViewState.IdRef="Sequence_74">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_10">
-                                                      <Assign.To>
-                                                        <OutArgument x:TypeArguments="ui:GenericValue">[temp1]</OutArgument>
-                                                      </Assign.To>
-                                                      <Assign.Value>
-                                                        <InArgument x:TypeArguments="ui:GenericValue">[item.Substring(1)]</InArgument>
-                                                      </Assign.Value>
-                                                    </Assign>
-                                                    <ui:AppendLine DisplayName="Append Line" FileName="tempFile" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[temp1.Substring(temp1.IndexOf(&quot; &quot;)).Substring(1)]" />
-                                                  </Sequence>
-                                                </If.Else>
-                                              </If>
-                                            </Sequence>
-                                          </If.Then>
-                                          <If.Else>
-                                            <ui:AppendLine DisplayName="Append Line" FileName="tempFile" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="[item]" />
-                                          </If.Else>
-                                        </If>
-                                      </If.Else>
-                                    </If>
+                                    <ui:Matches BuilderPattern="[^\d+/+\d]*[^\d]*" sap:VirtualizedContainerService.HintSize="412,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[i]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;NONEOF&quot;,&quot;OperationName&quot;:&quot;Not one of&quot;,&quot;OperationValue&quot;:&quot;\\d+\/+\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;*&quot;,&quot;QuantifierID&quot;:&quot;ANY&quot;,&quot;QuantifierName&quot;:&quot;Any (0 or more)&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;NONEOF&quot;,&quot;OperationName&quot;:&quot;Not one of&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;*&quot;,&quot;QuantifierID&quot;:&quot;ANY&quot;,&quot;QuantifierName&quot;:&quot;Any (0 or more)&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="[^\d+/+\d]*[^\d]*" RegexOption="IgnoreCase" Result="[temp]" />
+                                    <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,313" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[temp]">
+                                      <ui:ForEach.Body>
+                                        <ActivityAction x:TypeArguments="str:Match">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="str:Match" Name="item" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:AppendLine DisplayName="Append Line" FileName="onlyIngredients" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[item.ToString()]" />
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:ForEach.Body>
+                                    </ui:ForEach>
                                   </Sequence>
                                 </ActivityAction>
                               </ui:ForEach.Body>
                             </ui:ForEach>
-                            <ui:ReadTextFile Content="[temp]" DisplayName="Read Text File" FileName="tempFile" sap:VirtualizedContainerService.HintSize="1365,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_5" />
-                            <ui:GenerateDataTable ColumnSeparators="{x:Null}" ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="False" DataTable="[ingredientsDataTable]" DisplayName="Generate Data Table" sap:VirtualizedContainerService.HintSize="1365,59" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[temp]" />
                           </Sequence>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID5">
+                            <FlowStep x:Name="__ReferenceID8">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">200,757</av:Point>
+                                  <av:Point x:Key="ShapeLocation">200,807</av:Point>
                                   <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">300,823 300,874.5</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,873 300,924.5</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Get Login info" sap:VirtualizedContainerService.HintSize="376,316" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                              <Sequence DisplayName="Ingredients to CSV" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="ingredientsList" />
+                                  <Variable x:TypeArguments="x:String" Name="temp" />
+                                </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="Enter Username" Title="User Info">
-                                  <ui:InputDialog.Result>
-                                    <OutArgument x:TypeArguments="x:String">[username]</OutArgument>
-                                  </ui:InputDialog.Result>
-                                </ui:InputDialog>
-                                <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="True" Label="Enter Password" Title="User Info">
-                                  <ui:InputDialog.Result>
-                                    <OutArgument x:TypeArguments="x:String">[password]</OutArgument>
-                                  </ui:InputDialog.Result>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </ui:InputDialog>
+                                <ui:ReadTextFile Content="[ingredientsList]" DisplayName="Read Text File" FileName="onlyIngredients" sap:VirtualizedContainerService.HintSize="1365,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_4" />
+                                <ui:WriteTextFile DisplayName="Write Text File" FileName="tempFile" sap:VirtualizedContainerService.HintSize="1365,87" sap2010:WorkflowViewState.IdRef="WriteTextFile_5">
+                                  <ui:WriteTextFile.Text>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <Literal x:TypeArguments="x:String" Value="" />
+                                    </InArgument>
+                                  </ui:WriteTextFile.Text>
+                                </ui:WriteTextFile>
+                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1365,1041" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[Split(ingredientsList, Environment.NewLine)]">
+                                  <ui:ForEach.Body>
+                                    <ActivityAction x:TypeArguments="x:String">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1329,907" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <If Condition="[item.Contains(&quot;/&quot;) Or item.Length = 0  Or item.Contains(&quot;.&quot;)]" sap:VirtualizedContainerService.HintSize="1287,815" sap2010:WorkflowViewState.IdRef="If_16">
+                                          <If.Then>
+                                            <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                                          </If.Then>
+                                          <If.Else>
+                                            <If Condition="[item.Length &gt;= 2]" sap:VirtualizedContainerService.HintSize="1042,667" sap2010:WorkflowViewState.IdRef="If_15">
+                                              <If.Then>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="663,519" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                                                  <Sequence.Variables>
+                                                    <Variable x:TypeArguments="ui:GenericValue" Name="temp1" />
+                                                  </Sequence.Variables>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <If Condition="[item.Contains(&quot;(&quot;)]" sap:VirtualizedContainerService.HintSize="621,427" sap2010:WorkflowViewState.IdRef="If_18">
+                                                    <If.Then>
+                                                      <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <Sequence sap:VirtualizedContainerService.HintSize="376,279" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="ui:GenericValue">[temp1]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="ui:GenericValue">[item.Substring(1)]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <ui:AppendLine DisplayName="Append Line" FileName="tempFile" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[temp1.Substring(temp1.IndexOf(&quot; &quot;)).Substring(1)]" />
+                                                      </Sequence>
+                                                    </If.Else>
+                                                  </If>
+                                                </Sequence>
+                                              </If.Then>
+                                              <If.Else>
+                                                <ui:AppendLine DisplayName="Append Line" FileName="tempFile" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="[item]" />
+                                              </If.Else>
+                                            </If>
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEach.Body>
+                                </ui:ForEach>
+                                <ui:ReadTextFile Content="[temp]" DisplayName="Read Text File" FileName="tempFile" sap:VirtualizedContainerService.HintSize="1365,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_5" />
+                                <ui:GenerateDataTable ColumnSeparators="{x:Null}" ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="False" DataTable="[ingredientsDataTable]" DisplayName="Generate Data Table" sap:VirtualizedContainerService.HintSize="1365,59" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[temp]" />
                               </Sequence>
                               <FlowStep.Next>
                                 <FlowStep x:Name="__ReferenceID6">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">200,874.5</av:Point>
+                                      <av:Point x:Key="ShapeLocation">200,924.5</av:Point>
                                       <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">300,925.5 300,1007</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,975.5 300,1067</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:OpenBrowser BrowserType="Chrome" DisplayName="Private: Open &amp; Login to Instacart" Hidden="False" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_5" NewSession="True" Private="True" UiBrowser="[browser]" Url="https://www.instacart.com/">
@@ -559,9 +559,9 @@
                                     <FlowStep x:Name="__ReferenceID7">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">200,1007</av:Point>
+                                          <av:Point x:Key="ShapeLocation">200,1067</av:Point>
                                           <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">300,1073 300,1127</av:PointCollection>
+                                          <av:PointCollection x:Key="ConnectorLocation">300,1133 300,1187</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <Sequence DisplayName="Add grocery list to cart" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_62">
@@ -760,7 +760,7 @@
                                         <FlowStep x:Name="__ReferenceID4">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">200,1127</av:Point>
+                                              <av:Point x:Key="ShapeLocation">200,1187</av:Point>
                                               <av:Size x:Key="ShapeSize">200,66</av:Size>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
