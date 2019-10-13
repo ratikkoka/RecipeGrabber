@@ -1296,15 +1296,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\namit\\.nuget\\packages\\": {}
+    "C:\\Users\\kille\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "DubHacks",
       "projectName": "DubHacks",
-      "projectPath": "C:\\Users\\namit\\OneDrive\\Documents\\UiPath\\RecipeGrabber\\RecipeGrabber\\WalmartGrocery\\.local",
-      "packagesPath": "C:\\Users\\namit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\namit\\OneDrive\\Documents\\UiPath\\RecipeGrabber\\RecipeGrabber\\WalmartGrocery\\.local"
+      "projectPath": "C:\\Users\\kille\\OneDrive - UW\\DubHacks\\RecipeGrabber\\WalmartGrocery\\.local",
+      "packagesPath": "C:\\Users\\kille\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kille\\OneDrive - UW\\DubHacks\\RecipeGrabber\\WalmartGrocery\\.local"
     },
     "frameworks": {
       "net461": {
