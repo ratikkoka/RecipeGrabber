@@ -340,7 +340,7 @@
                               <av:Size x:Key="ShapeSize">200,66</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Ingredients to CSV" sap:VirtualizedContainerService.HintSize="699,1100" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                          <Sequence DisplayName="Ingredients to CSV" sap:VirtualizedContainerService.HintSize="1120,1444" sap2010:WorkflowViewState.IdRef="Sequence_52">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="ingredientsList" />
                               <Variable x:TypeArguments="x:String" Name="temp" />
@@ -351,41 +351,66 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ReadTextFile Content="[ingredientsList]" DisplayName="Read Text File" FileName="onlyIngredients" sap:VirtualizedContainerService.HintSize="657,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_5" />
-                            <ui:WriteTextFile DisplayName="Write Text File" FileName="tempFile" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="WriteTextFile_5">
+                            <ui:ReadTextFile Content="[ingredientsList]" DisplayName="Read Text File" FileName="onlyIngredients" sap:VirtualizedContainerService.HintSize="1078,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_5" />
+                            <ui:WriteTextFile DisplayName="Write Text File" FileName="tempFile" sap:VirtualizedContainerService.HintSize="1078,87" sap2010:WorkflowViewState.IdRef="WriteTextFile_5">
                               <ui:WriteTextFile.Text>
                                 <InArgument x:TypeArguments="x:String">
                                   <Literal x:TypeArguments="x:String" Value="" />
                                 </InArgument>
                               </ui:WriteTextFile.Text>
                             </ui:WriteTextFile>
-                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="657,457" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[Split(ingredientsList, Environment.NewLine)]">
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1078,801" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[Split(ingredientsList, Environment.NewLine)]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="x:String">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="621,323" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1042,667" sap2010:WorkflowViewState.IdRef="Sequence_53">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <If Condition="[item.Contains(&quot;/&quot;) Or item.Length = 0 Or item.Contains(&quot;(&quot;) Or item.Contains(&quot;)&quot;)]" sap:VirtualizedContainerService.HintSize="579,231" sap2010:WorkflowViewState.IdRef="If_9">
+                                    <If Condition="[item.Contains(&quot;/&quot;) Or item.Length = 0 Or item.Contains(&quot;(&quot;) Or item.Contains(&quot;)&quot;)]" sap:VirtualizedContainerService.HintSize="1000,575" sap2010:WorkflowViewState.IdRef="If_9">
                                       <If.Then>
                                         <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_2" />
                                       </If.Then>
                                       <If.Else>
-                                        <ui:AppendLine DisplayName="Append Line" FileName="tempFile" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[item]" />
+                                        <If Condition="[item.Length &gt;= 2]" sap:VirtualizedContainerService.HintSize="755,427" sap2010:WorkflowViewState.IdRef="If_10">
+                                          <If.Then>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="376,279" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="ui:GenericValue" Name="temp1" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="ui:GenericValue">[temp1]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="ui:GenericValue">[item.Substring(1)]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <ui:AppendLine DisplayName="Append Line" FileName="tempFile" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="[temp1.Substring(temp1.IndexOf(&quot; &quot;)).Substring(1)]" />
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <ui:AppendLine DisplayName="Append Line" FileName="tempFile" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="AppendLine_8" Text="[item]" />
+                                          </If.Else>
+                                        </If>
                                       </If.Else>
                                     </If>
                                   </Sequence>
                                 </ActivityAction>
                               </ui:ForEach.Body>
                             </ui:ForEach>
-                            <ui:ReadTextFile Content="[temp]" DisplayName="Read Text File" FileName="tempFile" sap:VirtualizedContainerService.HintSize="657,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_6" />
-                            <ui:GenerateDataTable ColumnSeparators="{x:Null}" ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="False" DataTable="[ingredientsDataTable]" DisplayName="Generate Data Table" sap:VirtualizedContainerService.HintSize="657,59" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[temp]" />
-                            <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[ingredientsDataTable]" Delimitator="Comma" DisplayName="Write CSV" FilePath="ingredientsList.csv" sap:VirtualizedContainerService.HintSize="657,87" sap2010:WorkflowViewState.IdRef="WriteCsvFile_2" />
+                            <ui:ReadTextFile Content="[temp]" DisplayName="Read Text File" FileName="tempFile" sap:VirtualizedContainerService.HintSize="1036,59" sap2010:WorkflowViewState.IdRef="ReadTextFile_6" />
+                            <ui:GenerateDataTable ColumnSeparators="{x:Null}" ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="False" DataTable="[ingredientsDataTable]" DisplayName="Generate Data Table" sap:VirtualizedContainerService.HintSize="1036,59" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[temp]" />
+                            <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[ingredientsDataTable]" Delimitator="Comma" DisplayName="Write CSV" FilePath="ingredientsList.csv" sap:VirtualizedContainerService.HintSize="1036,87" sap2010:WorkflowViewState.IdRef="WriteCsvFile_2" />
                           </Sequence>
                         </FlowStep>
                       </FlowStep.Next>
