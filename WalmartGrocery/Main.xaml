@@ -371,7 +371,7 @@
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <If Condition="[item.Contains(&quot;/&quot;) Or item.Length = 0 Or item.Contains(&quot;(&quot;)]" sap:VirtualizedContainerService.HintSize="579,231" sap2010:WorkflowViewState.IdRef="If_9">
+                                    <If Condition="[item.Contains(&quot;/&quot;) Or item.Length = 0 Or item.Contains(&quot;(&quot;) Or item.Contains(&quot;)&quot;)]" sap:VirtualizedContainerService.HintSize="579,231" sap2010:WorkflowViewState.IdRef="If_9">
                                       <If.Then>
                                         <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_2" />
                                       </If.Then>
