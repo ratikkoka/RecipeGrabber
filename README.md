@@ -9,7 +9,7 @@ ingredients to the cart on instacart.com.
 *  An Instacart account
 
 # Usage
-* Run through the .XAML file through the UIPath Studio or run it through a UIPath Robot
+* Run the .XAML file through UIPath Studio or run it through a UIPath Robot
 * Input a dish you want to get the ingredients for
 * Input the Username and Password for your Instacart account
 * Wait for the automation to add all ingredients to cart
